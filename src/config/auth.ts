@@ -1,6 +1,13 @@
-export default {
+interface IAuthConfig {
   jwt: {
-    secret: process.env.JWT_SECRET as string,
-    expiresIn: '1d'
+    secret: string;
+    expiresIn: string;
   }
 }
+
+export default {
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    expiresIn: '1d'
+  }
+} as IAuthConfig;

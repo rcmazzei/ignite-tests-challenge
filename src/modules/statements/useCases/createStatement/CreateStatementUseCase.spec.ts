@@ -61,7 +61,6 @@ describe("Create Statement", () => {
 
   it("should not be able to make a withdraw without sufficient balance", async () => {
     expect(async () => {
-
       const user = await usersRepository.create({
         name: "John Doe",
         email: "johndoe@unknown.com",
