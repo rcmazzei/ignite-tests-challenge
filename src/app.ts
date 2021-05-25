@@ -5,12 +5,14 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 
-import './database';
+import createConnection from './database';
 import './shared/container';
 import { router } from './routes';
 import { AppError } from './shared/errors/AppError';
 
 const app = express();
+
+createConnection().then(() => console.log('Database started'));
 
 app.use(cors());
 app.use(express.json());

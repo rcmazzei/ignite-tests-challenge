@@ -22,12 +22,12 @@ export class GetBalanceUseCase {
 
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
-  ) {}
+  ) { }
 
   async execute({ user_id }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findById(user_id);
 
-    if(!user) {
+    if (!user) {
       throw new GetBalanceError();
     }
 
